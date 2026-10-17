@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>刷题</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <h1>刷题</h1>
+      <a class="back-link" href="import.html">导入</a>
+      <a class="back-link" href="stats.html">统计</a>
+      <a class="back-link" href="fav.html">收藏</a>
+      <a class="back-link" href="wrong.html">错题本</a>
+      <a class="back-link" href="javascript:void(0)" id="btn-settings">设置</a>
+    </div>
+
+    <div class="card toolbar">
+      <input type="search" id="bank-search" class="search-input" placeholder="搜索题目（按题干关键词）">
+      <select id="bank-switch" class="select-input">
+        <option value="">全部题库</option>
+      </select>
+    </div>
+
+    <div id="bank-list"></div>
+
+    <p class="version-note" id="version-note"></p>
+  </div>
+
+  <!-- 设置面板 -->
+  <div class="mask" id="settings-mask" style="display:none;">
+    <div class="modal-box">
+      <p class="modal-title">设置</p>
+      <div class="setting-row">
+        <span class="label">深色模式</span>
+        <div class="seg" id="theme-seg">
+          <button data-theme="light">浅色</button>
+          <button data-theme="dark">深色</button>
+        </div>
+      </div>
+      <div class="setting-row">
+        <span class="label">字体大小</span>
+        <div class="seg" id="font-seg">
+          <button data-font="normal">中</button>
+          <button data-font="large">大</button>
+          <button data-font="xlarge">特大</button>
+        </div>
+      </div>
+      <div class="setting-row">
+        <span class="label">大按钮</span>
+        <div class="seg" id="bigbtn-seg">
+          <button data-bigbtn="0">关</button>
+          <button data-bigbtn="1">开</button>
+        </div>
+      </div>
+      <div class="setting-row">
+        <span class="label">答题音效</span>
+        <div class="seg" id="sound-seg">
+          <button data-sound="0">关</button>
+          <button data-sound="1">开</button>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-primary" id="settings-close">完成</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
