@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>答题</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="quiz-page">
+  <div class="container">
+    <div class="topbar">
+      <a class="back-link" href="index.html">返回</a>
+      <h1 id="bank-name">答题</h1>
+    </div>
+
+    <div class="quiz-info">
+      <span class="num" id="info-pos"></span>
+      <span id="info-correct"></span>
+      <span id="info-remain"></span>
+      <span class="timer" id="info-timer">00:00</span>
+      <span id="info-mode"></span>
+    </div>
+
+    <div class="opt-toolbar">
+      <label class="opt-toggle"><input type="checkbox" id="opt-shuffle-toggle"> 随机打乱选项顺序</label>
+    </div>
+
+    <div class="card" id="quiz-card">
+      <div id="stem-head"></div>
+      <div class="stem" id="stem"></div>
+      <div id="options"></div>
+      <div class="feedback" id="feedback" style="display:none;"></div>
+    </div>
+
+    <div class="quiz-actions">
+      <div class="btn-row">
+        <button class="btn btn-primary" id="btn-submit" disabled>提交</button>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-secondary" id="btn-prev">上一题</button>
+        <button class="btn btn-secondary" id="btn-sheet">答题卡</button>
+        <button class="btn btn-secondary" id="btn-next">下一题</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 答题卡弹层 -->
+  <div class="mask" id="sheet-mask" style="display:none;">
+    <div class="sheet">
+      <p class="sheet-title">答题卡</p>
+      <div class="sheet-legend">
+        <span><span class="dot" style="background:var(--green)"></span>答对</span>
+        <span><span class="dot" style="background:var(--red)"></span>答错</span>
+        <span><span class="dot" style="background:var(--primary-weak);border:1px solid var(--primary)"></span>已选</span>
+        <span><span class="dot" style="background:#fff;border:1px solid var(--border)"></span>未做</span>
+        <span><span class="dot" style="background:var(--primary)"></span>当前</span>
+      </div>
+      <div class="sheet-grid" id="sheet-grid"></div>
+      <div class="sheet-actions">
+        <button class="btn btn-secondary" id="btn-first-wrong">跳到第一道错题</button>
+        <button class="btn btn-primary" id="btn-sheet-close">关闭</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 交卷确认弹层 -->
+  <div class="mask" id="submit-mask" style="display:none;">
+    <div class="modal-box">
+      <p class="modal-title">交卷确认</p>
+      <p class="modal-text" id="submit-text"></p>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="btn-submit-cancel">再检查一下</button>
+        <button class="btn btn-primary" id="btn-submit-ok">确认交卷</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>错题本</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <a class="back-link" href="index.html">返回</a>
+      <h1>错题本</h1>
+    </div>
+
+    <div class="card toolbar">
+      <input type="search" id="search" class="search-input" placeholder="搜索题干关键词">
+      <select id="chapter-filter" class="select-input">
+        <option value="">全部章节</option>
+      </select>
+      <button class="btn btn-secondary btn-sm" id="export-btn">导出文本</button>
+    </div>
+
+    <div id="wrong-body"></div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/wrong.js"></script>
+</body>
+</html>
